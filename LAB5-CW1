@@ -1,0 +1,41 @@
+#include "mbed.h"
+#include <cstring>
+
+class Rectangle {
+private:
+// private data members: width and length
+// 'double' is for numbers, 'char' is for letters
+double width;
+double length;
+
+public:
+// constructor to initialise width and length
+Rectangle(double w, double l){
+width = w;
+length = l;
+}
+
+public:
+// function for area
+double area(){
+return width*length;
+}
+
+public:
+// function for perimeter
+double perimeter(){
+return 2*(width+length);
+}
+};
+
+// function to print area and perimeter
+int main (){
+// Start serial communication
+printf("Program Starting...\n")
+// Create a Rectange object - width 3, length 11
+Rectangle rect(3.0,11.0);
+// Output the area and perimeter of the rectangle
+printf("Rectangle Area:",rect.area());
+printf("Rectangle Perimeter:",rect.perimeter());
+return0;
+}
